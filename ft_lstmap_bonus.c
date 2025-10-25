@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mjaber <mjaber@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 11:36:01 by mjaber            #+#    #+#             */
-/*   Updated: 2025/10/23 13:36:04 by mjaber           ###   ########.fr       */
+/*   Created: 2025/10/23 17:08:48 by mjaber            #+#    #+#             */
+/*   Updated: 2025/10/23 20:26:20 by mjaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*cp;
+	t_list	*res;
+	t_list	*tmp;
 
-	cp = *lst;
-	if (!(*lst))
+	tmp = ft_lstnew(f(lst->content));
+	res = tmp;
+	while (lst->next)
 	{
-		*lst = new;
-		return ;
+		lst = lst->next;
+		tmp->next = ft_lstnew(f(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&res, del);
+			return (NULL);
+		}
+		tmp = tmp->next;
 	}
-	if (!new)
-		return ;
-	while (cp->next)
-		cp = cp->next;
-	cp->next = new;
+	return (res);
 }

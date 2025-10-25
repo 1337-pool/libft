@@ -1,11 +1,11 @@
 AR=ar -rcs
 RM=rm -rf
-CC=cc
 CFLAGS=-Wall -Wextra -Werror 
 NAME=libft.a
 BNAME=bonus
 BSRCS=ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c\
-      ft_lstadd_back_bonus.c
+      ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
+      ft_lstmap_bonus.c
 BOBJS=$(BSRCS:.c=.o)
 SRCS=ft_atoi.c ft_isdigit.c ft_memmove.c ft_split.c ft_strlcpy.c ft_strtrim.c\
      ft_bzero.c ft_isprint.c ft_memset.c ft_strchr.c ft_strlen.c ft_substr.c\
@@ -21,13 +21,14 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 $(BNAME): $(BOBJS)
-	touch $@
 	$(AR) $(NAME) $(BOBJS)
+	@touch $@
 clean:
 	$(RM) $(OBJS)
 fclean: clean
 	$(RM) $(NAME)
+	@$(RM) $(BNAME)
 re: fclean all
 
 .PHONY: all clean fclean re
-.SECONDARY: $(OBJS) $(BONJS) $(BNAME)
+#.SECONDARY: $(OBJS) $(BONJS) $(BNAME)
