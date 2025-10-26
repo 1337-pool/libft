@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_countword(char *s, char c)
+static int	ft_countword(char *s, char c)
 {
 	int	done;
 	int	count;
@@ -34,7 +34,7 @@ int	ft_countword(char *s, char c)
 	return (count);
 }
 
-char	*ft_getword(char *s, char c, int *index)
+static char	*ft_getword(char *s, char c, int *index)
 {
 	int		start;
 	int		end;

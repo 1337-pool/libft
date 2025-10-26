@@ -20,15 +20,16 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
+
 $(BNAME): $(BOBJS)
 	$(AR) $(NAME) $(BOBJS)
-	@touch $@
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BOBJS)
+
 fclean: clean
 	$(RM) $(NAME)
-	@$(RM) $(BNAME)
+
 re: fclean all
 
 .PHONY: all clean fclean re
-#.SECONDARY: $(OBJS) $(BONJS) $(BNAME)

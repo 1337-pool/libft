@@ -6,7 +6,7 @@
 /*   By: mjaber <mjaber@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:47:53 by mjaber            #+#    #+#             */
-/*   Updated: 2025/10/23 14:55:02 by mjaber           ###   ########.fr       */
+/*   Updated: 2025/10/26 10:04:20 by mjaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	if (!lst || !f)
 		return ;
 	cp = lst;
-	while(cp)
+	while (cp)
 	{
 		f(cp->content);
 		cp = cp->next;
