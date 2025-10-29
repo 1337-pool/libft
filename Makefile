@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mjaber <mjaber@student.1337.ma>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/27 21:39:57 by mjaber            #+#    #+#              #
+#    Updated: 2025/10/27 21:40:02 by mjaber           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 AR=ar -rcs
 RM=rm -rf
 CFLAGS=-Wall -Wextra -Werror 
@@ -32,4 +44,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

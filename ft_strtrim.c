@@ -6,13 +6,13 @@
 /*   By: mjaber <mjaber@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 09:23:19 by mjaber            #+#    #+#             */
-/*   Updated: 2025/10/21 14:27:02 by mjaber           ###   ########.fr       */
+/*   Updated: 2025/10/29 10:47:08 by mjaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_cinstr(char *s, char c)
+static int	ft_cinstr(char *s, char c)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ int	ft_cinstr(char *s, char c)
 	return (0);
 }
 
-void	ft_lenres(char *s1, char *set, int *index, int *len)
+static void	ft_lenres(char *s1, char *set, int *index, int *len)
 {
 	int	i;
 	int	slen;
@@ -63,6 +63,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	str = (char *)s1;
 	setp = (char *)set;
+	len = 0;
+	index = 0;
 	if (!str)
 	{
 		mem = (char *)malloc(1);
