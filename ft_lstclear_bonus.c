@@ -6,7 +6,7 @@
 /*   By: mjaber <mjaber@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:16:24 by mjaber            #+#    #+#             */
-/*   Updated: 2025/10/26 10:03:54 by mjaber           ###   ########.fr       */
+/*   Updated: 2025/10/29 11:38:51 by mjaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;
 
-	if (!(*lst) || !del)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{

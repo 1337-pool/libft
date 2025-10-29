@@ -6,7 +6,7 @@
 /*   By: mjaber <mjaber@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 09:23:19 by mjaber            #+#    #+#             */
-/*   Updated: 2025/10/29 10:47:08 by mjaber           ###   ########.fr       */
+/*   Updated: 2025/10/29 11:14:23 by mjaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = 0;
 	index = 0;
 	if (!str)
-	{
-		mem = (char *)malloc(1);
-		mem[0] = '\0';
-		return (mem);
-	}
+		return NULL;
 	ft_lenres(str, setp, &index, &len);
 	return ((char *)ft_substr(str, index, len));
 }
